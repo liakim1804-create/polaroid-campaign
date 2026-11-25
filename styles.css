@@ -31,7 +31,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:56px}
-body{font-family:'Urbanist','Pretendard Variable',Pretendard,system-ui,sans-serif;font-size:var(--fs-16);line-height:24px;letter-spacing:-.01em;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Wanted Sans Variable','Wanted Sans',system-ui,sans-serif;font-size:var(--fs-16);line-height:24px;letter-spacing:-.01em;background:var(--paper);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
@@ -161,6 +161,8 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}  /* Hangul reads smaller than Helvetica
 .tiles--3{grid-template-columns:repeat(3,1fr)}
 .tiles--3.stagger{grid-template-columns:1044fr 1081fr 1135fr}  /* new poster artboards: same height, different widths */
 .tiles--2{grid-template-columns:repeat(2,1fr)}
+.tiles--new{grid-template-columns:495fr 1135fr 1135fr 495fr;margin-top:var(--gap)}  /* same scale as the row above, centered */
+.tiles--new::before,.tiles--new::after{content:""}
 .tile{position:relative;margin:0;border-radius:var(--r-m);overflow:hidden;background:var(--grey)}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .tile:hover img{transform:scale(1.03)}
@@ -193,7 +195,7 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}  /* Hangul reads smaller than Helvetica
 .d-type p{color:var(--mute);margin-top:var(--sp-2)}
 .type2{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-6);align-items:end}
 .aa--ko .sm{font-size:.62em}
-.aa--ko{font-family:'Pretendard Variable',Pretendard,sans-serif;letter-spacing:-.04em;font-weight:500}
+.aa--ko{font-family:'Wanted Sans Variable','Wanted Sans',sans-serif;letter-spacing:-.04em;font-weight:500}
 .d-color{align-items:center;justify-content:center}
 .stripes{width:62%;aspect-ratio:1.6;display:grid;grid-template-rows:repeat(5,1fr)}
 .stripes i:nth-child(1){background:#0090e0}.stripes i:nth-child(2){background:#5fbd00}.stripes i:nth-child(3){background:#ffb300}.stripes i:nth-child(4){background:#ff7700}.stripes i:nth-child(5){background:#ff1a0a}
@@ -279,7 +281,7 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}  /* Hangul reads smaller than Helvetica
   .stats{grid-template-columns:1fr}
   .head{grid-template-columns:1fr}.head>div,.head__body{grid-column:auto}
   .igrid{grid-template-columns:repeat(2,1fr)}.ig__copy{grid-column:span 2}
-  .tiles--3,.tiles--3.stagger{grid-template-columns:1fr 1fr}.tiles--2{grid-template-columns:1fr}
+  .tiles--3,.tiles--3.stagger{grid-template-columns:1fr 1fr}.tiles--2{grid-template-columns:1fr}.tiles--new{grid-template-columns:1fr 1fr}.tiles--new::before,.tiles--new::after{display:none}
   .mbento{grid-template-columns:1fr;grid-auto-rows:clamp(240px,60vw,400px)}.mbento .tile--full{grid-column:auto}
   .dgrid{grid-template-columns:1fr 1fr;grid-auto-rows:240px}.d--2,.d--4{grid-column:span 2}
   .bleed{aspect-ratio:4/3}
