@@ -70,9 +70,6 @@ function wrapKorean(root = document.body) {
 }
 wrapKorean();
 
-/* hero image settle */
-requestAnimationFrame(() => document.querySelector('.hero').classList.add('loaded'));
-
 /* stories: background rectangle grows to full width as the section scrolls in */
 (() => {
   const el = document.querySelector('.section--grow');

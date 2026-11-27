@@ -6,7 +6,7 @@
 <title>Polaroid — Feel Your Next Photo.</title>
 <meta name="description" content="폴라로이드가 상상하는 사진의 다음 형태. PHOTO BECOMES ___ 캠페인 웹사이트.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
-<link rel="stylesheet" href="styles.css?v=17">
+<link rel="stylesheet" href="styles.css?v=36">
 </head>
 <body>
 
@@ -25,7 +25,7 @@
   <!-- HERO: minimal — full-bleed image, slogan + logo only -->
   <section class="hero">
     <figure class="hero__media" aria-hidden="true">
-      <img src="assets/hero-full.jpg" alt="">
+      <img src="assets/hero-light-v3.jpg" alt="">
     </figure>
     <div class="hero__inner">
       <h1 class="hero__title">Feel Your Next Photo.</h1>
@@ -39,7 +39,7 @@
       <div class="head reveal">
         <div><p class="label">About Polaroid</p>
         <h2 class="h2">사진을 직접 보고,<br>만지고, 소유하다.</h2></div>
-        <p class="copy muted head__body">폴라로이드는 촬영한 순간을 즉시 실물 사진으로 확인하게 만든 즉석카메라 브랜드입니다. 디지털 이미지가 빠르게 소비되는 지금에도, 사진을 손에 쥐는 경험을 이어갑니다.</p>
+        <p class="copy muted head__body">폴라로이드는 1948년 첫 즉석카메라를 선보이며 사진의 방식을 바꾼 브랜드입니다. <br class="br-wide">셔터를 누른 그 자리에서 인화되는 한 장의 사진은, 순간을 바로 보고 나누게 했습니다. <br class="br-wide">디지털 이미지가 빠르게 소비되는 지금에도 손에 쥐고 간직하는 경험을 이어갑니다.</p>
       </div>
       <div class="abgrid reveal">
         <figure class="card card--img"><img src="assets/about-wide.png" alt="폴라로이드 사진을 든 사람들"></figure>
@@ -53,12 +53,12 @@
     <div class="wrap">
       <p class="label">Campaign plan</p>
       <h2 class="h2 reveal">What will a photo<br>become?</h2>
-      <p class="lead reveal">디지털 시대에 실물 사진은 어떻게 확장될 수 있을까요? 이 캠페인은 사진을 감각과 경험으로 넓히는 미래의 폴라로이드를 상상합니다.</p>
+      <p class="lead reveal">디지털 시대, 화면 속 사진이 빠르게 지나갈 때 실물 사진은 어떻게 확장될 수 있을까요? <br class="br-lead">이 캠페인은 눈으로만 보던 한 장의 사진에 그날의 소리와 움직임, 온도까지 생생히 담아 <br class="br-lead">지난 순간을 온몸의 감각으로 다시 경험하게 하는 미래의 폴라로이드를 상상합니다.</p>
       <div class="cards3 diag">
         <article class="dcard reveal">
           <div class="dcard__head"><span class="ico">1</span>Expand</div>
           <h3>사진의 범위를<br>넓히다</h3>
-          <p>단순히 장면을 기록하는 것이 아니라 소리, 움직임, 향기까지 담아내는 경험으로 확장합니다.</p>
+          <p>단순히 장면을 기록하는 것이 아니라 소리, 움직임, 온도까지 담아내는 경험으로 확장합니다.</p>
         </article>
         <article class="dcard reveal">
           <div class="dcard__head"><span class="ico">2</span>Keep</div>
@@ -79,10 +79,12 @@
     <div class="wrap">
       <div class="head reveal">
         <div><p class="label">Design system</p>
-        <h2 class="h2">Black, white,<br>and light.</h2></div>
-        <p class="copy muted head__body">레인보우 스펙트럼과 흰색 필름 프레임을 핵심 그래픽으로 사용하며, 단순한 레이아웃과 즉석사진 이미지를 결합해 폴라로이드만의 자유롭고 창의적인 정체성을 전달합니다. 컬러는 블랙과 화이트를 바탕으로, 그 위에 다양한 색의 빛을 더해 표현합니다.</p>
+        <h2 class="h2">사진을 넘어,<br>감각으로 이어지다.</h2></div>
       </div>
       <div class="dgrid">
+        <div class="d d--4 d-slogan reveal"><span class="tag">Slogan</span>
+          <canvas id="slogan" role="img" aria-label="Feel Your Next Photo.">Feel Your Next Photo.</canvas>
+        </div>
         <div class="d d--2 d-logo reveal"><span class="tag">Logo</span><img src="assets/logo.svg" alt="Polaroid"></div>
         <div class="d d--2 d-type reveal"><span class="tag">Typography</span><div class="type2"><div><div class="aa">Aa</div><p>Wanted Sans</p></div><div><div class="aa aa--ko">가<span class="sm">가</span></div><p>Wanted Sans</p></div></div></div>
         <div class="d d--4 d-grad reveal"><img src="assets/gradient.png?v=2" alt="색 번짐 그래디언트"><span class="tag tag--light">Color</span><ul><li>tangible</li><li>spontaneous</li><li>playful</li><li>colorful</li><li>imperfect</li><li>human</li></ul></div>
@@ -95,18 +97,13 @@
     <div class="wrap">
       <div class="head reveal">
         <div><p class="label">Posters</p>
-        <h2 class="h2">Photo becomes<br>sound, energy, scent.</h2></div>
-        <p class="copy muted head__body">눈으로 보는 사진을 넘어, 그날의 소리와 향기, 움직임이 남긴 힘과 박동까지 온몸으로 다시 느끼게 하는 미래의 폴라로이드를 표현한 포스터 5종입니다.</p>
+        <h2 class="h2">Photo becomes<br>sound, energy, temperature.</h2></div>
+        <p class="copy muted head__body">눈으로 보는 사진을 넘어, 그날의 소리와 온기, 움직임이 남긴 힘과 박동까지 온몸으로 다시 느끼게 하는 미래의 폴라로이드를 표현한 포스터 3종입니다.</p>
       </div>
-      <div class="tiles tiles--3 stagger">
-        <figure class="tile tile--poster reveal"><img src="assets/poster-sound.png" alt="Feel Your Next Photo. 포스터 — 헤드폰 위 빛 곡선"></figure>
-        <figure class="tile tile--poster reveal"><img src="assets/poster-energy.png" alt="Feel Your Next Photo. 포스터 — SOUND"></figure>
-        <figure class="tile tile--poster reveal"><img src="assets/poster-scent.png" alt="Feel Your Next Photo. 포스터 — 하단 타이틀"></figure>
-      </div>
-      <div class="tiles tiles--new reveal">
-        <figure class="tile tile--poster"><img src="assets/poster-02-energy.png" alt="Feel Your Next Photo. 포스터 — 02 ENERGY, 춤추는 두 실루엣"></figure>
-        <figure class="tile tile--poster"><img src="assets/poster-03-temperature.png" alt="Feel Your Next Photo. 포스터 — 03 TEMPERATURE, 온도 빛번짐 인물"></figure>
-      </div>
+      <div class="posters">
+        <figure class="poster poster--a reveal"><img src="assets/poster-main-01-sound.png" alt="Feel Your Next Photo. 포스터 — 01 SOUND, 헤드폰을 쓴 인물"></figure>
+        <figure class="poster poster--b reveal"><img src="assets/poster-main-02-energy.png?v=3" alt="Feel Your Next Photo. 포스터 — 02 ENERGY, 춤추는 두 실루엣"></figure>
+        <figure class="poster poster--c reveal"><img src="assets/poster-main-03-temperature.png" alt="Feel Your Next Photo. 포스터 — 03 TEMPERATURE, 온도 빛번짐 인물"></figure>      </div>
     </div>
   </section>
 
@@ -119,7 +116,7 @@
       <div class="head reveal">
         <div><p class="label">Out of home</p>
         <h2 class="h2">Posters on the street.</h2></div>
-        <p class="copy muted head__body">콘크리트 벽, 버스 쉼터, 팝업스토어 쇼윈도에서 SOUND, ENERGY, SCENT가 한 세트로 보이도록 구성한 옥외광고 목업입니다. 도시의 빛과 포스터가 만나 사진의 다음 형태를 길 위에서 처음 발견하게 합니다.</p>
+        <p class="copy muted head__body">콘크리트 벽, 버스 쉼터, 팝업스토어 쇼윈도에서 SOUND, ENERGY, TEMPERATURE가 한 세트로 보이도록 구성한 옥외광고 목업입니다. 도시의 빛과 포스터가 만나 사진의 다음 형태를 길 위에서 처음 발견하게 합니다.</p>
       </div>
       <div class="mbento">
         <figure class="tile reveal"><img src="assets/mock-wall.jpg" alt="콘크리트 벽 포스터"><figcaption>Concrete wall</figcaption></figure>
@@ -188,6 +185,8 @@
 </main>
 
 
-<script src="main.js?v=13"></script>
+<script src="main.js?v=16"></script>
+<script src="slogan-path.js?v=1"></script>
+<script src="slogan.js?v=6"></script>
 </body>
 </html>
