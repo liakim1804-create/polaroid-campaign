@@ -23,13 +23,13 @@
   --r-s:12px; --r-m:12px; --r-l:40px; --r-pill:999px;
 
   /* layout */
-  --col:1536px; --side:20px; --gut:max(var(--side),calc((100vw - var(--col))/2)); --gap:16px;   /* --side steps up with screen width, below */
+  --col:1536px; --side:20px; --side-lg:12px; --gut:max(var(--side),calc((100vw - var(--col))/2)); --gap:16px;   /* --side steps up with screen width, below */
   --section:clamp(80px,10vw,160px);   /* vertical section rhythm */
   --block:clamp(48px,6vw,80px);       /* title → content */
 
   --ease:cubic-bezier(.2,.7,.2,1);
 }
-@media (min-width:1248px){:root{--side:48px}}
+@media (min-width:1248px){:root{--side:48px;--side-lg:20px}}
 @media (min-width:1344px){:root{--side:96px}}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:56px}
@@ -57,12 +57,17 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 .muted{color:var(--body)}
 .copy{font-size:var(--fs-14);line-height:1.6;max-width:520px}
 .copy p+p,.copy.muted{margin-top:var(--sp-4)}
-@media (max-width:1159px){.br-wide{display:none}}  /* fixed line breaks only where the column is wide enough for them */
-@media (max-width:559px){.br-lead{display:none}}
+/* measured line breaks, so the lines of each paragraph match: br-d desktop, br-lead tablet+desktop, br-m phones, br-dm desktop+phones */
+.br-m{display:none}
+@media (max-width:1159px){.br-d{display:none}}
+@media (max-width:559px){.br-lead{display:none}.br-m{display:inline}}
+@media (min-width:560px) and (max-width:1159px){.br-dm{display:none}}
 
 /* ---------- layout ---------- */
 .wrap{width:min(var(--col),100% - var(--side) * 2);margin:0 auto}
 .wrap.narrow{width:min(900px,100% - var(--side) * 2)}
+/* two page grids: .wrap is the small grid (--side margins), .wrap-lg the big grid (narrower --side-lg margins, no max width) */
+.wrap-lg{width:calc(100% - var(--side-lg) * 2);margin:0 auto}
 .section{padding:var(--section) 0}
 .section>.split,.section>.bento,.section>.stats{width:min(var(--col),100% - var(--side) * 2);margin-left:auto;margin-right:auto}
 .section--dark{background:var(--ink);color:#fff;border-radius:var(--r-l);margin:0 var(--sp-3)}
@@ -88,14 +93,14 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 .nav__logo{display:flex;align-items:center}
 .nav__mark{height:20px;width:auto;display:block}
 .nav__links{display:flex;gap:var(--sp-12)}
-.nav__links a{font-size:var(--fs-12);line-height:16px;font-weight:500;letter-spacing:-.01em;opacity:.6;transition:opacity .25s}
+.nav__links a{font-size:var(--fs-14);line-height:18px;font-weight:500;letter-spacing:-.01em;opacity:.6;transition:opacity .25s}
 .nav__links a:hover,.nav__links a.is-active{opacity:1}
 
 /* ---------- hero (minimal: full-bleed image, slogan + logo) ---------- */
 .hero{position:relative;min-height:125svh;display:grid;place-items:center;padding:var(--sp-16) 0;text-align:center;color:#fff;overflow:hidden;background:#000}
-.hero__media{position:absolute;inset:0;margin:0}
+.hero__media{position:absolute;inset:0;margin:0;isolation:isolate;background:#000}
 .hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.1),rgba(0,0,0,0) 45%,rgba(0,0,0,.2))}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 76%}   /* still image: no zoom or hover motion; keeps both lights in the first screen */
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:50% 76%}   /* keeps both lights in the first screen */
 @media (orientation:portrait){.hero__media img{object-position:55% 50%}}
 .hero__inner{position:relative;width:min(var(--col),100% - var(--side) * 2);display:flex;flex-direction:column;align-items:center;gap:var(--sp-6)}
 .hero__title{font-size:clamp(28px,3.6vw,52px);line-height:.96;font-weight:600;letter-spacing:-.03em;font-kerning:none}  /* per-letter values are set in the HTML */
@@ -147,11 +152,6 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 .print__cap i{font-style:normal;color:var(--mute);font-weight:500}
 
 /* ---------- stories ---------- */
-.phones{display:grid;grid-template-columns:1.1fr auto auto;gap:clamp(24px,4vw,64px);align-items:center;margin-top:clamp(80px,10vw,128px);background:var(--grey);border-radius:var(--r-l);padding:clamp(32px,5vw,72px);overflow:hidden}
-.phone{width:min(240px,26vw);aspect-ratio:390/844;background:#111;border-radius:var(--r-l);padding:var(--sp-2);box-shadow:0 24px 64px rgba(0,0,0,.25)}
-.phone--b{transform:translateY(var(--sp-10))}
-.phone__screen{width:100%;height:100%;border-radius:32px;overflow:hidden;background:#000}
-.phone__screen img{width:100%;height:100%;object-fit:cover}
 
 
 /* ---------- showcase: heads, tiles, full-bleed, bento ---------- */
@@ -159,12 +159,11 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 .head{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--sp-6) var(--gap);align-items:end;margin-bottom:var(--block)}
 .head>div{grid-column:span 6}
 .head__body{grid-column:8 / span 5;margin:0;max-width:none}
-/* posters: three equal posters, 4 columns each, the middle one dropped; still images (no hover motion) */
-#posters .head{margin-bottom:var(--sp-32)}
-.posters{display:grid;grid-template-columns:repeat(12,1fr);gap:var(--gap);align-items:start;max-width:1280px;margin-inline:auto}
-.poster{margin:0;grid-column:span 4}
-.poster img{width:100%;height:auto}
-.poster--b{margin-top:var(--sp-24)}
+/* posters: three equal posters in a row on the big grid, tops aligned; still images (no hover motion) */
+#posters{padding-block:var(--block)}#posters .head{margin-bottom:0}  /* text only: the same space above it and above the billboard */
+#stories .head{margin-bottom:0}
+#popup{padding-block:var(--block)}#popup .head{margin-bottom:0}
+@media (min-width:981px) and (max-width:1030px){#posters .br-m,#stories .br-m,#popup .br-m{display:inline}}  /* narrow column: three even lines */
 .tile{position:relative;margin:0;border-radius:var(--r-m);overflow:hidden;background:var(--grey)}
 .tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
 .tile:hover img{transform:scale(1.03)}
@@ -185,13 +184,14 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 .tag{position:absolute;left:var(--sp-4);top:var(--sp-4);z-index:2;font-size:var(--fs-12);line-height:16px;font-weight:600;color:var(--mute)}
 .tag--light{color:rgba(255,255,255,.85);text-shadow:0 1px 8px rgba(0,0,0,.35)}
 /* slogan motion (drawn by slogan.js) */
-.d-slogan{grid-row:span 2}
+.d-slogan{grid-row:span 2;background:#000}
+.d-slogan .tag{color:#8a8a8a}
 .d-slogan canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
 .d-logo{align-items:center;justify-content:center}
 .d.d-logo img{width:52%;height:auto;object-fit:contain}
 .d-key{background:#0b0b0b;color:#fff;flex-direction:column;justify-content:center;align-items:flex-start;gap:var(--sp-3);padding:var(--sp-8)}
 .d-key b{font-size:clamp(48px,7vw,96px);line-height:.9;font-weight:700;letter-spacing:-.05em}
-.d-key .boxed{display:inline-block;border:1px solid #fff;padding:var(--sp-1) var(--sp-2);font-size:clamp(16px,2vw,28px);line-height:1.1;letter-spacing:-.02em}
+.d-key .boxed{display:inline-block;border:1px solid #fff;padding:var(--sp-1) var(--sp-2);font-size:clamp(16px,2vw,28px);line-height:1.1;letter-spacing:-.02em;transition:opacity .18s ease}
 .d .d-key__logo{height:20px;width:auto;object-fit:contain;filter:brightness(0) invert(1);margin-top:var(--sp-4)}
 .d-type{flex-direction:column;justify-content:flex-end;padding:var(--sp-6)}
 .d-type .aa{font-size:128px;line-height:1;font-weight:500;letter-spacing:-.06em}
@@ -220,8 +220,8 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
   .igrid>figure:nth-of-type(2){grid-column:span 3}
   .igrid>figure:nth-of-type(2) img{object-fit:contain;object-position:top}
 }
-.ig__copy{padding-bottom:var(--sp-2)}
-.ig__copy .h2{margin-bottom:var(--sp-4)}
+.ig__copy{padding-bottom:0}
+.ig__copy .h2{margin-bottom:0}
 
 /* ---------- free-form collage (image only) ---------- */
 .section--collage{padding-block:var(--sp-16) var(--section)}
@@ -246,13 +246,13 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 .diag .dcard:nth-child(3){margin-top:var(--sp-32)}
 /* stories on the dark card layout */
 .section--dark .muted{color:#a8a8a8}
-.section--dark .phones{background:transparent;padding:0;margin-top:0;border-radius:0;overflow:visible}
-.section--dark .phone{width:min(280px,26vw);background:#2a2a2a;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 24px 64px rgba(0,0,0,.5)}
 
 /* varied compositions (image only): edge-to-edge pair + asymmetric mosaic */
-.pair{display:grid;grid-template-columns:1fr 1fr;gap:0;width:100%;margin-bottom:var(--section)}   /* breathing room before the dark story section */
-.pair figure{margin:0;width:100%;height:min(62.5vw,100svh);overflow:hidden;background:#000}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);width:100%;margin-block:var(--sp-3)}   /* same margin above, between and below */
+.pair figure{margin:0;width:100%;aspect-ratio:1;overflow:hidden}
 .pair img{width:100%;height:100%;object-fit:cover;display:block}
+.hall{margin:0;width:100%}   /* landscape billboard: edge to edge, whole picture; the pair's margin sits below it */
+.hall img{display:block;width:100%;height:auto}
 
 /* ---------- cta + footer ---------- */
 .cta{position:relative;overflow:hidden;text-align:center;min-height:max(100svh,640px);padding:var(--sp-20) var(--sp-5);display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -277,16 +277,14 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
   .nav__links{gap:var(--sp-6)}
   .split,.bento,.cards3{grid-template-columns:1fr}
   .bento{height:auto}.bento .card{aspect-ratio:16/10}
-  .phones{grid-template-columns:1fr 1fr}.phones__copy{grid-column:span 2}.phone{width:100%}
   .stats{grid-template-columns:1fr}
   .head{grid-template-columns:1fr}.head>div,.head__body{grid-column:auto}
   .igrid{grid-template-columns:repeat(2,1fr)}.ig__copy{grid-column:span 2}
-  .posters{grid-template-columns:1fr 1fr;row-gap:var(--sp-12)}.poster:nth-child(n){grid-column:auto;grid-row:auto;margin-top:0;align-self:start}.posters .poster--a{grid-column:1 / -1;justify-self:center;width:100%;max-width:524px}.posters .poster--c{margin-top:var(--sp-12)}#posters .head{margin-bottom:var(--sp-20)}
   .mbento{grid-template-columns:1fr;grid-auto-rows:clamp(240px,60vw,400px)}.mbento .tile--full{grid-column:auto}
   .dgrid{grid-template-columns:1fr 1fr;grid-auto-rows:240px}.d--2,.d--4{grid-column:span 2}.d-slogan{grid-row:span 1}
   .bleed{aspect-ratio:4/3}
   .footer{grid-template-columns:1fr;gap:var(--sp-6)}.footer__info{grid-template-columns:1fr 1fr;margin-left:0}.footer__links{flex-direction:row;align-items:flex-start;gap:var(--sp-6)}
-  .pair{grid-template-columns:1fr}.pair figure{height:auto;aspect-ratio:4/3}
+  .pair{grid-template-columns:1fr}
   .diag{padding-bottom:0}.diag .dcard:nth-child(n){margin-top:0}
   .collage{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}
   .c{transform:none!important;grid-column:auto!important;grid-row:auto!important;aspect-ratio:4/3}
@@ -294,38 +292,49 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 }
 
 /* wireframe placeholders for mockup images (images stay in the HTML; remove this block to restore) */
-.bleed,.mbento .tile,.pair figure{background:#ececec;border-radius:0}
-.bleed img,.mbento .tile img,.pair figure img{opacity:0}
+.bleed,.mbento .tile{background:#ececec;border-radius:0}
+.bleed img,.mbento .tile img{opacity:0}
 .bleed figcaption,.mbento .tile figcaption{display:none}
+.bleed.bleed--photo{aspect-ratio:5888/3296;background:#14161d}   /* filled slot: whole width on every screen, so no poster is cut */
+.bleed.bleed--photo img{opacity:1}
 .mbento{gap:var(--gap)}
 .mbento .tile{border-radius:var(--r-m)}
-.pair{gap:0}
 
-/* stories: normal-size dark card; on scroll only its background rectangle grows to the full width and joins the black feed below */
-.grow-track{position:relative}
-.section--grow{--p:0;position:relative;isolation:isolate;background:transparent;margin:0;border-radius:0;padding-bottom:calc(var(--section) + 1px)}
-.section--grow::before{content:"";position:absolute;z-index:-1;background:var(--ink);
-  left:calc(max(12px,var(--side) / 2) * (1 - var(--p)));right:calc(max(12px,var(--side) / 2) * (1 - var(--p)));
-  top:calc(-48px * var(--p));bottom:-1px;
-  border-radius:calc(var(--r-l) * (1 - var(--p))) calc(var(--r-l) * (1 - var(--p))) 0 0}
 .section--flat{border-radius:0;margin-inline:0}
 .section--dark .label{color:#a8a8a8}
 .section--dark .igrid .tile{background:#111}
-@media (prefers-reduced-motion:reduce){.section--grow{--p:1!important}}
 
 /* instagram feed: 3x3 posts at the 3:4 feed ratio under the title, square corners */
 .igrid{display:block}
-.feedgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:var(--block)}  /* same 1px gap as the real Instagram profile grid */
-.feedgrid img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;background:#2c2c2c}
+/* feed: 3:4 posts side by side on the dark ground, the current one centred, neighbours cut by the screen edges */
+.strip{--h:min(84svh,54.4vw);--gap-post:calc(var(--h) * .0323);position:relative;height:var(--h);margin-top:var(--block);overflow:hidden}
+.strip img{position:absolute;top:0;left:50%;display:block;height:100%;width:calc(var(--h) * .75);object-fit:cover;background:#1c1c1c;transform:translateX(-50%);will-change:transform}
+.strip__gap{position:absolute;visibility:hidden;width:var(--gap-post);height:0}
+@media (orientation:portrait){.strip{--h:min(84svh,92vw)}}  /* upright screens: the post takes about 70% of the width */
+/* stories: two square-cornered black tiles with narrow white gaps, one iPhone in each */
+#stories{padding-block:var(--block) var(--sp-3)}  /* one image gap under the tiles */
+#stories .storybento{margin-top:calc(var(--block) - 4px)}  /* heading sits midway: 4px is the extra room inside its last line */
+.storybento{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-3);margin-top:var(--block)}
+.storybento figure{margin:0;display:flex;align-items:center;justify-content:center;background:#000;height:min(calc((100vw - 3 * var(--sp-3)) * .625),calc(100svh - 2 * var(--sp-3)))}  /* 4:5, never taller than the screen */
+.phone{position:relative;height:84%;aspect-ratio:440/906}
+.phone__frame{position:absolute;inset:0;width:100%;height:100%;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Apple SD Gothic Neo',sans-serif;letter-spacing:-.01em}
+/* the 402 x 714.67 story sits under the status bar of the phone (434 x 906 body, 16pt border, 3 for the buttons) */
+.phone>.story{position:absolute;left:4.318%;top:8.609%;width:91.364%;border-radius:2.49% / 1.4%;isolation:isolate}
+@media (max-width:767px){.storybento{grid-template-columns:1fr}.storybento figure{height:calc((100vw - 2 * var(--sp-3)) * 1.55)}.phone{height:90%}}
+.story{position:relative;aspect-ratio:9/16;background:#2c2c2c;overflow:hidden}
+.story>img,.story>video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* Instagram story viewer UI, drawn on a 402pt-wide artboard so it scales with the slot */
+.story__ui{position:absolute;inset:0;width:100%;height:100%;fill:#fff;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Text','Apple SD Gothic Neo',sans-serif;letter-spacing:-.01em}
+.story__ui .ig-line{fill:none;stroke:#fff;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+/* story progress: the current segment follows the video clock (main.js) */
+.story__ui .ig-play{transform-box:fill-box;transform-origin:left center;transform:scaleX(0)}
+@media (prefers-reduced-motion:reduce){.story__ui .ig-play{transform:scaleX(.6)}}
+
 /* mockup photo under the feed: edge to edge, one screen tall; on wide screens never cropped so far that a phone is cut */
-#instagram{padding-bottom:0}
-.fullshot{margin:var(--section) 0 0;width:100%}
+.fullshot{margin:0;width:100%}
 .fullshot img{display:block;width:100%;height:clamp(54vw,100svh,74.84vw);object-fit:cover;object-position:50% 42%}
 @media (orientation:portrait){.fullshot img{height:auto;aspect-ratio:9/10;object-position:78% 50%}}
 
-/* stories: empty wireframe screens */
-.section--grow .phone__screen{background:#2c2c2c}
-.section--grow .phone__screen img{opacity:0}
 
 /* body copy: even line lengths */
 .copy,.lead,.muted,.head__body,.dcard p,section p{text-wrap:balance;word-break:keep-all}
@@ -333,3 +342,54 @@ h3:has(.ko),h4:has(.ko){line-height:1.3}
 /* about: same grid as the design-system section (head 6/5 split, 2 equal tiles, 16px gap) */
 .abgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:var(--gap);grid-auto-rows:clamp(280px,32vw,520px)}
 @media (max-width:980px){.abgrid{grid-template-columns:1fr}}
+
+/* campaign goal: photo fills the left half of the screen, text sits in the middle of the right half.
+   The section is taller than the screen and its content is sticky, so scrolling holds here once (--hold) before moving on */
+.goal{--hold:70svh;height:calc(100svh + var(--hold));min-height:calc(560px + var(--hold));scroll-margin-top:-56px}
+.goal__pin{position:sticky;top:0;display:grid;grid-template-columns:1fr 1fr;height:100svh;min-height:560px}
+.goal__img{margin:0;min-width:0;min-height:0;overflow:hidden;background:var(--grey)}
+.goal__img img{display:block;width:100%;height:100%;object-fit:cover;object-position:45% 50%}
+/* label at the top of the half, title and body at the bottom, all on one left edge */
+.goal__text{display:grid;grid-template-rows:auto 1fr auto auto;justify-content:start;padding:var(--sp-16) 20px var(--sp-16) var(--sp-16)}
+.goal__text .h2{grid-row:3}.goal__text .lead{grid-row:4}
+/* upright screens: half a screen is too narrow for the camera and the face, so stack (no hold: taller than the screen) */
+@media (max-width:767px),(orientation:portrait){.goal{height:auto;min-height:0;scroll-margin-top:0}.goal__pin{position:static;grid-template-columns:1fr;height:auto;min-height:0}.goal__img{aspect-ratio:1/1}.goal__text{grid-template-rows:none;justify-content:start;padding:var(--sp-12) var(--side) 0}.goal__text .h2,.goal__text .lead{grid-row:auto}}
+@media (max-width:559px){.goal__img{aspect-ratio:4/5}}
+/* goal body: two lines (wider block, smaller side margins); three where the column cannot hold two */
+.br-three{display:none}
+@media (max-width:559px),(min-width:768px) and (max-width:1129px) and (orientation:landscape){.br-two{display:none}.br-three{display:inline}}
+/* second story: centred line that hands over to the logo at the end of the clip */
+.story__ui .st-title{font-family:'Wanted Sans Variable','Wanted Sans',sans-serif;font-size:23.6px;font-weight:600;letter-spacing:-.02em;transition:opacity .18s ease}
+.story__ui .st-logo{opacity:0;transition:opacity .18s ease}
+.story.is-end .st-title{opacity:0}
+.story.is-end .st-logo{opacity:1;transition:opacity .25s ease .1s}
+/* first story: shared reel. The link sits under the name; tapping the picture brings up the "watch reel" bubble, as in the app */
+.story--reel{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.story__ui .st-reel{cursor:pointer;outline:none;transition:opacity .15s ease}
+.story__ui .st-reel:hover{opacity:.75}
+.story__ui .st-reel:active{opacity:.55}
+.story__ui .st-tip{cursor:pointer;outline:none;opacity:0;visibility:hidden;transform:scale(.9);transform-box:fill-box;transform-origin:center;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.9,.3,1.3),visibility 0s .22s}
+.story--reel.is-tip .st-tip{opacity:1;visibility:visible;transform:none;transition:opacity .16s ease,transform .22s cubic-bezier(.2,.9,.3,1.3)}
+.story--reel.is-tip .st-tip:active{opacity:.6}
+.story__ui .st-reel:focus-visible,.story__ui .st-tip:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* the shared reel sits as a card (310x551 at 46,84 on the 402x714.67 artboard), flat, over a blurred copy of itself */
+.story--reel{background:#0b0d12}
+.story--reel>.st-bg{position:absolute;left:-12%;top:-12%;width:124%;height:124%;filter:blur(22px) saturate(1.15) brightness(.82)}
+.story.story--reel>video{inset:auto;left:11.44%;top:11.75%;width:77.11%;height:77.1%;border-radius:3.9% / 2.2%;background:#05070d}
+.story__ui .st-card{font-variant-numeric:tabular-nums}
+
+/* hero lights drift and breathe. plus-lighter adds the two masked halves back into the exact picture;
+   every keyframe keeps 2 x shift + turn within (scale - 1), so no edge ever shows */
+.hero__media img.hero__light{position:absolute;inset:0;mix-blend-mode:plus-lighter;will-change:transform,opacity}
+.hero__light--blue{-webkit-mask-image:linear-gradient(to top right,#000 28%,transparent 72%);mask-image:linear-gradient(to top right,#000 28%,transparent 72%);animation:hero-blue 8s ease-in-out infinite}
+.hero__light--orange{-webkit-mask-image:linear-gradient(to top right,transparent 28%,#000 72%);mask-image:linear-gradient(to top right,transparent 28%,#000 72%);animation:hero-orange 10s ease-in-out infinite}
+@keyframes hero-blue{
+  0%,100%{transform:translate3d(7%,-6%,0) rotate(0deg) scale(1.24);opacity:1}
+  35%{transform:translate3d(-3%,4%,0) rotate(2deg) scale(1.18);opacity:.62}
+  70%{transform:translate3d(9%,2%,0) rotate(-2deg) scale(1.34);opacity:1}
+}
+@keyframes hero-orange{
+  0%,100%{transform:translate3d(-6%,5%,0) rotate(0deg) scale(1.22);opacity:.95}
+  40%{transform:translate3d(3%,-4%,0) rotate(-2deg) scale(1.18);opacity:.6}
+  72%{transform:translate3d(-9%,-3%,0) rotate(2deg) scale(1.32);opacity:1}
+}

@@ -6,7 +6,7 @@
 <title>Polaroid — Feel Your Next Photo.</title>
 <meta name="description" content="폴라로이드가 상상하는 사진의 다음 형태. PHOTO BECOMES ___ 캠페인 웹사이트.">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
-<link rel="stylesheet" href="styles.css?v=46">
+<link rel="stylesheet" href="styles.css?v=121">
 </head>
 <body>
 
@@ -16,7 +16,7 @@
   <nav class="nav__links" aria-label="섹션">
     <a href="#about" data-ch="about" class="is-active">About</a>
     <a href="#idea" data-ch="plan">Plan</a>
-    <a href="#design" data-ch="design">Design</a>
+    <a href="#design" data-ch="design">Content</a>
   </nav>
 </header>
 
@@ -26,7 +26,8 @@
   <!-- HERO: minimal — full-bleed image, slogan + logo only -->
   <section class="hero">
     <figure class="hero__media" aria-hidden="true">
-      <img src="assets/hero-light-v4.avif" alt="" fetchpriority="high" decoding="async">
+      <img class="hero__light hero__light--blue" src="assets/hero-light-v4.avif" alt="" fetchpriority="high" decoding="async">
+      <img class="hero__light hero__light--orange" src="assets/hero-light-v4.avif" alt="" decoding="async">
     </figure>
     <div class="hero__inner">
       <!-- per-letter tracking from Figma 668:580 (base -3%). Browsers drop kerning between differently-spaced spans,
@@ -40,9 +41,9 @@
   <section data-chapter="about" class="section" id="about">
     <div class="wrap">
       <div class="head reveal">
-        <div><p class="label">About Polaroid</p>
+        <div><p class="label">Brand overview</p>
         <h2 class="h2">사진을 직접 보고,<br>만지고, 소유하다.</h2></div>
-        <p class="copy muted head__body">폴라로이드는 1948년 첫 즉석카메라를 선보이며 사진의 방식을 바꾼 브랜드입니다. <br class="br-wide">셔터를 누른 그 자리에서 인화되는 한 장의 사진은, 순간을 바로 보고 나누게 했습니다. <br class="br-wide">디지털 이미지가 빠르게 소비되는 지금에도 손에 쥐고 간직하는 경험을 이어갑니다.</p>
+        <p class="copy muted head__body">폴라로이드는 1948년 첫 즉석카메라를 선보이며 <br class="br-m">사진의 방식을 바꾼 브랜드입니다. <br class="br-d">셔터를 누른 그 <br class="br-m">자리에서 인화되는 한 장의 사진은, 순간을 바로 보고 <br class="br-m">나누게 했습니다. <br class="br-d">디지털 이미지가 빠르게 소비되는 <br class="br-m">지금에도 손에 쥐고 간직하는 경험을 이어갑니다.</p>
       </div>
       <div class="abgrid reveal">
         <figure class="card card--img"><img src="assets/about-flip.jpg" alt="밤에 폴라로이드 카메라로 촬영하는 오렌지색 옷의 사람" style="object-position:50% 30%" loading="lazy" decoding="async"></figure>
@@ -51,27 +52,39 @@
     </div>
   </section>
 
-  <!-- IDEA -->
-  <section data-chapter="plan" class="section" id="idea">
+  <!-- CAMPAIGN GOAL -->
+  <section data-chapter="plan" class="goal" id="idea">
+    <div class="goal__pin">
+      <figure class="goal__img"><img src="assets/goal-sea.avif" width="2998" height="1720" alt="바다 앞에서 폴라로이드 I-2 카메라로 촬영하는 빨간 모자의 사람" loading="lazy" decoding="async"></figure>
+      <div class="goal__text">
+        <p class="label">Campaign goal</p>
+        <h2 class="h2 reveal">레트로를 넘어,<br>사진의 다음으로.</h2>
+        <p class="lead reveal">폴라로이드가 레트로 감성에만 머무는 브랜드처럼 보이는 <br class="br-three">인식을 바꾸고자 합니다. <br class="br-two">과거를 추억하는 브랜드를 넘어, <br class="br-three">사진의 다음 가능성을 제안하는 브랜드로 바라보게 합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPAIGN CONCEPT and its three directions -->
+  <section data-chapter="plan" class="section" id="campaign">
     <div class="wrap">
-      <p class="label">Campaign plan</p>
-      <h2 class="h2 reveal">보는 사진에서<br>느끼는 사진으로.</h2>
-      <p class="lead reveal">디지털 시대, 화면 속 사진이 빠르게 지나갈 때 실물 사진은 어떻게 확장될 수 있을까요? <br class="br-lead">이 캠페인은 눈으로만 보던 한 장의 사진에 그날의 소리와 움직임, 온도까지 생생히 담아 <br class="br-lead">지난 순간을 온몸의 감각으로 다시 경험하게 하는 미래의 폴라로이드를 상상합니다.</p>
+      <p class="label">Campaign concept</p>
+      <h2 class="h2 reveal">미래의 사진을<br>감각으로 제안하다.</h2>
+      <p class="lead reveal">폴라로이드는 오랫동안 즉석사진을 통해 사진을 직접 <br class="br-m">촬영하고 실물로 확인하는 경험을 만들어 <br class="br-lead">왔습니다. 사진 <br class="br-m">기술이 변화하며 이미지에 다양한 정보를 담을 수 있게 <br class="br-m">된 현재, 폴라로이드가 <br class="br-lead">만들어 온 사진의 형태를 기반으로 <br class="br-m">미래의 사진이 어떤 모습으로 변화할 수 있을지 탐구합니다.</p>
       <div class="cards3 diag">
         <article class="dcard reveal">
           <div class="dcard__head"><span class="ico">1</span>Expand</div>
           <h3>사진의 범위를<br>넓히다</h3>
-          <p>단순히 장면을 기록하는 것이 아니라 소리, 움직임, 온도까지 담아내는 경험으로 확장합니다.</p>
+          <p>단순한 장면 기록을 넘어 소리와 움직임, <br class="br-dm">온도까지 담아내는 경험으로 확장합니다.</p>
         </article>
         <article class="dcard reveal">
           <div class="dcard__head"><span class="ico">2</span>Keep</div>
           <h3>폴라로이드의 본질을<br>이어가다</h3>
-          <p>경험이 확장되어도, 촬영한 순간이 즉석에서 인화되어 한 장의 실물로 남는 본질은 지킵니다.</p>
+          <p>경험이 확장되어도, 촬영한 순간이 즉석에서 <br class="br-dm">인화되어 한 장의 실물로 남는 본질은 지킵니다.</p>
         </article>
         <article class="dcard reveal">
           <div class="dcard__head"><span class="ico">3</span>Imagine</div>
           <h3>사진의 다음 형태를<br>제안하다</h3>
-          <p>사람들은 자신의 기억과 감정을 사진에 더하고, 다음 시대의 사진이 어떤 모습일지 새롭게 상상합니다.</p>
+          <p>사람들은 자신의 기억과 감정을 <br class="br-m">사진에 더하고, 다음 <br class="br-d">시대의 사진이 <br class="br-m">어떤 모습일지 새롭게 상상합니다.</p>
         </article>
       </div>
     </div>
@@ -99,88 +112,180 @@
   <section data-chapter="design" class="section" id="posters">
     <div class="wrap">
       <div class="head reveal">
-        <div><p class="label">Posters</p>
+        <div><p class="label">Campaign posters</p>
         <h2 class="h2">소리와 에너지,<br>온도까지 담은 사진.</h2></div>
-        <p class="copy muted head__body">눈으로 보는 사진을 넘어, 그날의 소리와 온기, 움직임이 남긴 힘과 박동까지 온몸으로 다시 느끼게 하는 미래의 폴라로이드를 표현한 포스터 3종입니다.</p>
+        <p class="copy muted head__body">눈으로 보는 사진을 넘어, 그날의 소리와 온기, 움직임이 <br class="br-m">남긴 힘과 박동까지 <br class="br-d">온몸으로 다시 느끼게 하는 <br class="br-m">미래의 폴라로이드를 표현한 메인 포스터입니다.</p>
       </div>
-      <div class="posters">
-        <figure class="poster poster--a reveal"><img src="assets/poster-main-01-sound.avif" alt="Feel Your Next Photo. 포스터 — 01 SOUND, 헤드폰을 쓴 인물" width="2160" height="2880" loading="lazy" decoding="async"></figure>
-        <figure class="poster poster--b reveal"><img src="assets/poster-main-02-energy.avif" alt="Feel Your Next Photo. 포스터 — 02 ENERGY, 춤추는 두 실루엣" width="2160" height="2880" loading="lazy" decoding="async"></figure>
-        <figure class="poster poster--c reveal"><img src="assets/poster-main-03-temperature.avif" alt="Feel Your Next Photo. 포스터 — 03 TEMPERATURE, 온도 빛번짐 인물" width="2160" height="2880" loading="lazy" decoding="async"></figure>      </div>
     </div>
   </section>
 
   <!-- FULL-BLEED 1 -->
-  <figure data-chapter="design" class="bleed reveal"><img data-src="assets/popup-flagship.jpg" alt="폴라로이드 팝업스토어 외관"><figcaption>Pop-up store</figcaption></figure>
+  <figure data-chapter="design" class="hall"><img src="assets/ooh-hall-landscape.avif" width="2688" height="1792" alt="짐을 끌고 걷는 두 사람 뒤로 대형 가로 전광판에 Feel Your Next Photo. 포스터가 걸린 실내 광장 목업" loading="lazy" decoding="async"></figure>
 
-  <!-- STREET MOCKUPS (bento) -->
-  <section data-chapter="design" class="section">
-    <div class="wrap">
-      <div class="head reveal">
-        <div><p class="label">Out of home</p>
-        <h2 class="h2">거리에서 만나는<br>다음의 폴라로이드.</h2></div>
-        <p class="copy muted head__body">콘크리트 벽, 버스 쉼터, 팝업스토어 쇼윈도에서 SOUND, ENERGY, TEMPERATURE가 한 세트로 보이도록 구성한 옥외광고 목업입니다. 도시의 빛과 포스터가 만나 사진의 다음 형태를 길 위에서 처음 발견하게 합니다.</p>
-      </div>
-      <div class="mbento">
-        <figure class="tile reveal"><img data-src="assets/mock-wall.jpg" alt="콘크리트 벽 포스터"><figcaption>Concrete wall</figcaption></figure>
-        <figure class="tile reveal"><img data-src="assets/mock-busstop.jpg" alt="버스 쉼터 포스터"><figcaption>Bus shelter</figcaption></figure>
-        <figure class="tile tile--full reveal"><img data-src="assets/popup-three.jpg" alt="네온 조명의 팝업스토어 포스터"><figcaption>Pop-up store</figcaption></figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- EDGE-TO-EDGE PAIR -->
-  <div data-chapter="design" class="pair reveal">
-    <figure><img data-src="assets/mock-alley.jpg" alt="골목 벽의 포스터"></figure>
-    <figure><img data-src="assets/mock-subway-energy.jpg" alt="지하철 통로의 포스터"></figure>
+  <!-- TWO MOCKUPS, narrow middle gap -->
+  <div data-chapter="design" class="pair">
+    <figure><img src="assets/ooh-subway-energy.avif" width="2048" height="2048" alt="지하철 통로 광고판에 걸린 폴라로이드 ENERGY 포스터" loading="lazy" decoding="async"></figure>
+    <figure><img src="assets/ooh-platform-temperature.avif" width="2048" height="2048" alt="지하철 승강장 광고판에 걸린 폴라로이드 TEMPERATURE 포스터" loading="lazy" decoding="async"></figure>
   </div>
+  <figure data-chapter="design" class="bleed bleed--photo"><img src="assets/ooh-street-posters-2944.avif" srcset="assets/ooh-street-posters-2944.avif 2944w, assets/ooh-street-posters.avif 5888w" sizes="100vw" width="5888" height="3296" alt="해 질 녘 거리의 벽에 나란히 걸린 SOUND, ENERGY, TEMPERATURE 포스터" loading="lazy" decoding="async"></figure>
 
-  <!-- STORIES (dark card layout) -->
-  <div class="grow-track">
-  <section data-chapter="design" class="section section--dark section--grow" id="stories">
-    <div class="wrap">
-      <div class="phones">
-        <div class="phones__copy reveal">
-          <p class="label label--light">Instagram story</p>
-          <h3 class="h2">캠페인 인지에서<br>체험, 제품 탐색까지.</h3>
-          <p class="muted copy">빛의 움직임에서 포토부스 오픈, 신제품 카메라까지 이어지는 스토리입니다.</p>
-        </div>
-        <div class="phone reveal"><div class="phone__screen"><img data-src="assets/story-2.png" alt="인스타그램 스토리"></div></div>
-        <div class="phone phone--b reveal"><div class="phone__screen"><img data-src="assets/story-1.png" alt="새 카메라 사용법 스토리"></div></div>
-      </div>
-    </div>
-  </section>
-  </div>
-
+  <!-- STORIES -->
   <!-- INSTAGRAM -->
   <section data-chapter="design" class="section section--dark section--flat" id="instagram">
     <div class="wrap">
       <div class="igrid">
         <div class="ig__copy reveal">
-          <p class="label">Instagram</p>
+          <p class="label">Instagram feed</p>
           <h2 class="h2">아홉 장으로 보는<br>캠페인의 장면들.</h2>
         </div>
       </div>
-      <div class="feedgrid reveal" aria-label="인스타그램 피드 3×3">
-        <img src="assets/poster-main-01-sound.avif" alt="01 SOUND 포스터" loading="lazy" decoding="async">
-        <img src="assets/feed-02.avif" alt="푸른 빛의 흐름과 Feel Your Next Photo. 문구" loading="lazy" decoding="async">
-        <img src="assets/poster-main-02-energy.avif" alt="02 ENERGY 포스터" loading="lazy" decoding="async">
-        <img src="assets/feed-04.avif" alt="신제품 카메라" loading="lazy" decoding="async">
-        <img src="assets/poster-main-03-temperature.avif" alt="03 TEMPERATURE 포스터" loading="lazy" decoding="async">
-        <img src="assets/feed-06.avif" alt="빛의 파동 위에 놓인 폴라로이드 인화 사진" loading="lazy" decoding="async">
-        <img src="assets/feed-07.avif" alt="카메라를 눈에 대고 웃는 인물과 Polaroid 로고" loading="lazy" decoding="async">
-        <img src="assets/feed-08.avif" alt="폴라로이드 카메라와 인화 사진 세 장" loading="lazy" decoding="async">
-        <img src="assets/feed-09.avif" alt="헤드폰을 쓴 인물과 Feel Your Next Photo. 문구" loading="lazy" decoding="async">
-      </div>
     </div>
-    <!-- app mockup photo, edge to edge under the feed -->
-    <figure class="fullshot">
-      <img src="assets/ig-stone-v2-2560.avif" srcset="assets/ig-stone-v2-2560.avif 2560w, assets/ig-stone-v2.avif 5088w" sizes="(orientation: portrait) 150vw, 100vw" width="5088" height="3808" alt="어두운 단 위에 놓인 두 대의 휴대폰에 폴라로이드 인스타그램 프로필과 TEMPERATURE 게시물이 보이는 목업" loading="lazy" decoding="async">
-    </figure>
+    <!-- the nine posts, one step to the left at a time (main.js) -->
+    <div class="strip" role="group" aria-label="인스타그램 피드 게시물 9장">
+      <img src="assets/poster-main-01-sound.avif" alt="01 SOUND 포스터" loading="lazy" decoding="async">
+      <img src="assets/feed-02.avif" alt="푸른 빛의 흐름과 Feel Your Next Photo. 문구" loading="lazy" decoding="async">
+      <img src="assets/poster-main-02-energy.avif" alt="02 ENERGY 포스터" loading="lazy" decoding="async">
+      <img src="assets/feed-04.avif" alt="신제품 카메라" loading="lazy" decoding="async">
+      <img src="assets/poster-main-03-temperature.avif" alt="03 TEMPERATURE 포스터" loading="lazy" decoding="async">
+      <img src="assets/feed-06.avif" alt="빛의 파동 위에 놓인 폴라로이드 인화 사진" loading="lazy" decoding="async">
+      <img src="assets/feed-07.avif" alt="카메라를 눈에 대고 웃는 인물과 Polaroid 로고" loading="lazy" decoding="async">
+      <img src="assets/feed-08.avif" alt="폴라로이드 카메라와 인화 사진 세 장" loading="lazy" decoding="async">
+      <img src="assets/feed-09.avif" alt="헤드폰을 쓴 인물과 Feel Your Next Photo. 문구" loading="lazy" decoding="async">
+    </div>
   </section>
 
+  <!-- STORIES -->
+  <section data-chapter="design" class="section" id="stories">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="label">Instagram story</p>
+        <h3 class="h2">화면 가득 흐르는<br>사진의 다음 감각.</h3></div>
+        <p class="copy muted head__body">눈을 감고 빛을 느끼는 순간부터 새 카메라를 들고 <br class="br-m">환하게 웃는 순간까지, <br class="br-d">짧게 넘기는 화면에서도 <br class="br-m">미래의 폴라로이드를 만나게 하는 스토리입니다.</p>
+      </div>
+      <!-- the finished stories, each on an iPhone, in two square-cornered tiles.
+           App UI is a vector overlay; the phone itself comes from mockup/instagram.html -->
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+          <linearGradient id="ig-shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#000" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity="0"/></linearGradient>
+          <clipPath id="ig-round"><circle cx="50" cy="50" r="50"/></clipPath>
+        </defs>
+        <linearGradient id="ph-hi1" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="906"><stop offset="0" stop-color="#8c888a"/><stop offset=".13" stop-color="#5a5659"/><stop offset=".87" stop-color="#5a5659"/><stop offset="1" stop-color="#8c888a"/></linearGradient>
+        <linearGradient id="ph-hi2" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="0" y2="906"><stop offset="0" stop-color="#b2aeaf"/><stop offset=".13" stop-color="#8f8a8e"/><stop offset=".87" stop-color="#8f8a8e"/><stop offset="1" stop-color="#b2aeaf"/></linearGradient>
+        <linearGradient id="ph-key" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#85818a"/><stop offset=".25" stop-color="#3a373a"/><stop offset=".6" stop-color="#161417"/></linearGradient>
+        <linearGradient id="ph-key-r" x1="1" y1="0" x2="0" y2="0"><stop offset="0" stop-color="#85818a"/><stop offset=".25" stop-color="#3a373a"/><stop offset=".6" stop-color="#161417"/></linearGradient>
+        <radialGradient id="ph-lens" cx=".4" cy=".38" r=".65"><stop offset="0" stop-color="#162047"/><stop offset=".6" stop-color="#080b1c"/><stop offset="1" stop-color="#020204"/></radialGradient>
+        <symbol id="ph-frame" viewBox="0 0 440 906">
+          <g fill="url(#ph-key)"><rect x=".7" y="187" width="5" height="42" rx="1.6"/><rect x=".7" y="260" width="5" height="67.5" rx="1.6"/><rect x=".7" y="345" width="5" height="67.5" rx="1.6"/></g>
+          <rect x="434.3" y="283" width="5" height="106" rx="1.6" fill="url(#ph-key-r)"/>
+          <path d="M1.2 188.2v4M1.2 223.8v4M1.2 261.2v4M1.2 322.3v4M1.2 346.2v4M1.2 407.3v4M438.8 284.2v4M438.8 383.8v4" fill="none" stroke="#d6d2d4" stroke-width=".9" stroke-linecap="round" stroke-opacity=".75"/>
+          <path d="M314.71 0C349.92 0 367.53 0 383.41 5.24L386.48 5.99C407.17 13.52 423.48 29.83 431.01 50.52L431.76 53.59C437 69.47 437 87.08 437 122.29L437 783.71C437 818.92 437 836.53 431.76 852.41L431.01 855.48C423.48 876.17 407.17 892.48 386.48 900.01L383.41 900.76C367.53 906 349.92 906 314.71 906L125.29 906C90.08 906 72.47 906 56.59 900.76L53.52 900.01C32.83 892.48 16.52 876.17 8.99 855.48L8.24 852.41C3 836.53 3 818.92 3 783.71L3 122.29C3 87.08 3 69.47 8.24 53.59L8.99 50.52C16.52 29.83 32.83 13.52 53.52 5.99L56.59 5.24C72.47 0 90.08 0 125.29 0Z" fill="#0d0d0f"/>
+          <path d="M314.97 0.50C349.97 0.50 367.46 0.50 383.24 5.71L386.30 6.46C406.86 13.94 423.06 30.14 430.54 50.70L431.29 53.76C436.50 69.54 436.50 87.03 436.50 122.03L436.50 783.97C436.50 818.97 436.50 836.46 431.29 852.24L430.54 855.30C423.06 875.86 406.86 892.06 386.30 899.54L383.24 900.29C367.46 905.50 349.97 905.50 314.97 905.50L125.03 905.50C90.03 905.50 72.54 905.50 56.76 900.29L53.70 899.54C33.14 892.06 16.94 875.86 9.46 855.30L8.71 852.24C3.50 836.46 3.50 818.97 3.50 783.97L3.50 122.03C3.50 87.03 3.50 69.54 8.71 53.76L9.46 50.70C16.94 30.14 33.14 13.94 53.70 6.46L56.76 5.71C72.54 0.50 90.03 0.50 125.03 0.50Z" fill="#1b191c"/>
+          <path d="M315.55 1.60C350.06 1.60 367.32 1.60 382.88 6.74L385.89 7.47C406.17 14.85 422.15 30.83 429.53 51.11L430.26 54.12C435.40 69.68 435.40 86.94 435.40 121.45L435.40 784.55C435.40 819.06 435.40 836.32 430.26 851.88L429.53 854.89C422.15 875.17 406.17 891.15 385.89 898.53L382.88 899.26C367.32 904.40 350.06 904.40 315.55 904.40L124.45 904.40C89.94 904.40 72.68 904.40 57.12 899.26L54.11 898.53C33.83 891.15 17.85 875.17 10.47 854.89L9.74 851.88C4.60 836.32 4.60 819.06 4.60 784.55L4.60 121.45C4.60 86.94 4.60 69.68 9.74 54.12L10.47 51.11C17.85 30.83 33.83 14.85 54.11 7.47L57.12 6.74C72.68 1.60 89.94 1.60 124.45 1.60Z" fill="#222023"/>
+          <path d="M315.98 2.40C350.13 2.40 367.21 2.40 382.61 7.48L385.60 8.21C405.67 15.52 421.48 31.33 428.79 51.40L429.52 54.39C434.60 69.79 434.60 86.87 434.60 121.02L434.60 784.98C434.60 819.13 434.60 836.21 429.52 851.61L428.79 854.60C421.48 874.67 405.67 890.48 385.60 897.79L382.61 898.52C367.21 903.60 350.13 903.60 315.98 903.60L124.02 903.60C89.87 903.60 72.79 903.60 57.39 898.52L54.40 897.79C34.33 890.48 18.52 874.67 11.21 854.60L10.48 851.61C5.40 836.21 5.40 819.13 5.40 784.98L5.40 121.02C5.40 86.87 5.40 69.79 10.48 54.39L11.21 51.40C18.52 31.33 34.33 15.52 54.40 8.21L57.39 7.48C72.79 2.40 89.87 2.40 124.02 2.40Z" fill="#29272a"/>
+          <path d="M316.29 3C350.19 3 367.13 3 382.42 8.04L385.38 8.77C405.29 16.02 420.98 31.71 428.23 51.62L428.96 54.58C434 69.87 434 86.81 434 120.71L434 785.29C434 819.19 434 836.13 428.96 851.42L428.23 854.38C420.98 874.29 405.29 889.98 385.38 897.23L382.42 897.96C367.13 903 350.19 903 316.29 903L123.71 903C89.81 903 72.87 903 57.58 897.96L54.62 897.23C34.71 889.98 19.02 874.29 11.77 854.38L11.04 851.42C6 836.13 6 819.19 6 785.29L6 120.71C6 86.81 6 69.87 11.04 54.58L11.77 51.62C19.02 31.71 34.71 16.02 54.62 8.77L57.58 8.04C72.87 3 89.81 3 123.71 3Z" fill="#3b383b"/>
+          <path d="M316.56 3.50C350.23 3.50 367.07 3.50 382.25 8.51L385.19 9.23C404.98 16.43 420.57 32.02 427.77 51.81L428.49 54.75C433.50 69.93 433.50 86.77 433.50 120.44L433.50 785.56C433.50 819.23 433.50 836.07 428.49 851.25L427.77 854.19C420.57 873.98 404.98 889.57 385.19 896.77L382.25 897.49C367.07 902.50 350.23 902.50 316.56 902.50L123.44 902.50C89.77 902.50 72.93 902.50 57.75 897.49L54.81 896.77C35.02 889.57 19.43 873.98 12.23 854.19L11.51 851.25C6.50 836.07 6.50 819.23 6.50 785.56L6.50 120.44C6.50 86.77 6.50 69.93 11.51 54.75L12.23 51.81C19.43 32.02 35.02 16.43 54.81 9.23L57.75 8.51C72.93 3.50 89.77 3.50 123.44 3.50Z" fill="url(#ph-hi1)"/>
+          <path d="M316.87 4.10C350.28 4.10 366.99 4.10 382.05 9.07L384.97 9.79C404.60 16.93 420.07 32.40 427.21 52.03L427.93 54.95C432.90 70.01 432.90 86.72 432.90 120.13L432.90 785.87C432.90 819.28 432.90 835.99 427.93 851.05L427.21 853.97C420.07 873.60 404.60 889.07 384.97 896.21L382.05 896.93C366.99 901.90 350.28 901.90 316.87 901.90L123.13 901.90C89.72 901.90 73.01 901.90 57.95 896.93L55.03 896.21C35.40 889.07 19.93 873.60 12.79 853.97L12.07 851.05C7.10 835.99 7.10 819.28 7.10 785.87L7.10 120.13C7.10 86.72 7.10 70.01 12.07 54.95L12.79 52.03C19.93 32.40 35.40 16.93 55.03 9.79L57.95 9.07C73.01 4.10 89.72 4.10 123.13 4.10Z" fill="url(#ph-hi2)"/>
+          <path d="M317.51 5.30C350.39 5.30 366.83 5.30 381.66 10.19L384.53 10.90C403.85 17.93 419.07 33.15 426.10 52.47L426.81 55.34C431.70 70.17 431.70 86.61 431.70 119.49L431.70 786.51C431.70 819.39 431.70 835.83 426.81 850.66L426.10 853.53C419.07 872.85 403.85 888.07 384.53 895.10L381.66 895.81C366.83 900.70 350.39 900.70 317.51 900.70L122.49 900.70C89.61 900.70 73.17 900.70 58.34 895.81L55.47 895.10C36.15 888.07 20.93 872.85 13.90 853.53L13.19 850.66C8.30 835.83 8.30 819.39 8.30 786.51L8.30 119.49C8.30 86.61 8.30 70.17 13.19 55.34L13.90 52.47C20.93 33.15 36.15 17.93 55.47 10.90L58.34 10.19C73.17 5.30 89.61 5.30 122.49 5.30Z" fill="#2b2b2b"/>
+          <path d="M317.93 6.10C350.46 6.10 366.72 6.10 381.39 10.94L384.23 11.64C403.35 18.59 418.41 33.65 425.36 52.77L426.06 55.61C430.90 70.28 430.90 86.54 430.90 119.07L430.90 786.93C430.90 819.46 430.90 835.72 426.06 850.39L425.36 853.23C418.41 872.35 403.35 887.41 384.23 894.36L381.39 895.06C366.72 899.90 350.46 899.90 317.93 899.90L122.07 899.90C89.54 899.90 73.28 899.90 58.61 895.06L55.77 894.36C36.65 887.41 21.59 872.35 14.64 853.23L13.94 850.39C9.10 835.72 9.10 819.46 9.10 786.93L9.10 119.07C9.10 86.54 9.10 70.28 13.94 55.61L14.64 52.77C21.59 33.65 36.65 18.59 55.77 11.64L58.61 10.94C73.28 6.10 89.54 6.10 122.07 6.10Z" fill="#0b0b0b"/>
+          <path d="M318.35 6.90C350.53 6.90 366.62 6.90 381.13 11.69L383.94 12.38C402.85 19.26 417.74 34.15 424.62 53.06L425.31 55.87C430.10 70.38 430.10 86.47 430.10 118.65L430.10 787.35C430.10 819.53 430.10 835.62 425.31 850.13L424.62 852.94C417.74 871.85 402.85 886.74 383.94 893.62L381.13 894.31C366.62 899.10 350.53 899.10 318.35 899.10L121.65 899.10C89.47 899.10 73.38 899.10 58.87 894.31L56.06 893.62C37.15 886.74 22.26 871.85 15.38 852.94L14.69 850.13C9.90 835.62 9.90 819.53 9.90 787.35L9.90 118.65C9.90 86.47 9.90 70.38 14.69 55.87L15.38 53.06C22.26 34.15 37.15 19.26 56.06 12.38L58.87 11.69C73.38 6.90 89.47 6.90 121.65 6.90Z" fill="#343434"/>
+          <path d="M319.10 8.30C350.66 8.30 366.44 8.30 380.67 13L383.42 13.67C401.97 20.42 416.58 35.03 423.33 53.58L424 56.33C428.70 70.56 428.70 86.34 428.70 117.90L428.70 788.10C428.70 819.66 428.70 835.44 424 849.67L423.33 852.42C416.58 870.97 401.97 885.58 383.42 892.33L380.67 893C366.44 897.70 350.66 897.70 319.10 897.70L120.90 897.70C89.34 897.70 73.56 897.70 59.33 893L56.58 892.33C38.03 885.58 23.42 870.97 16.67 852.42L16 849.67C11.30 835.44 11.30 819.66 11.30 788.10L11.30 117.90C11.30 86.34 11.30 70.56 16 56.33L16.67 53.58C23.42 35.03 38.03 20.42 56.58 13.67L59.33 13C73.56 8.30 89.34 8.30 120.90 8.30Z" fill="#212121"/>
+          <path d="M319.52 9.10C350.73 9.10 366.33 9.10 380.40 13.74L383.13 14.41C401.47 21.09 415.91 35.53 422.59 53.87L423.26 56.60C427.90 70.67 427.90 86.27 427.90 117.48L427.90 788.52C427.90 819.73 427.90 835.33 423.26 849.40L422.59 852.13C415.91 870.47 401.47 884.91 383.13 891.59L380.40 892.26C366.33 896.90 350.73 896.90 319.52 896.90L120.48 896.90C89.27 896.90 73.67 896.90 59.60 892.26L56.87 891.59C38.53 884.91 24.09 870.47 17.41 852.13L16.74 849.40C12.10 835.33 12.10 819.73 12.10 788.52L12.10 117.48C12.10 86.27 12.10 70.67 16.74 56.60L17.41 53.87C24.09 35.53 38.53 21.09 56.87 14.41L59.60 13.74C73.67 9.10 89.27 9.10 120.48 9.10Z" fill="#151515"/>
+          <path d="M319.94 9.90C350.80 9.90 366.22 9.90 380.14 14.49L382.83 15.15C400.97 21.75 415.25 36.03 421.85 54.17L422.51 56.86C427.10 70.78 427.10 86.20 427.10 117.06L427.10 788.94C427.10 819.80 427.10 835.22 422.51 849.14L421.85 851.83C415.25 869.97 400.97 884.25 382.83 890.85L380.14 891.51C366.22 896.10 350.80 896.10 319.94 896.10L120.06 896.10C89.20 896.10 73.78 896.10 59.86 891.51L57.17 890.85C39.03 884.25 24.75 869.97 18.15 851.83L17.49 849.14C12.90 835.22 12.90 819.80 12.90 788.94L12.90 117.06C12.90 86.20 12.90 70.78 17.49 56.86L18.15 54.17C24.75 36.03 39.03 21.75 57.17 15.15L59.86 14.49C73.78 9.90 89.20 9.90 120.06 9.90Z" fill="#0d0d0d"/>
+          <path d="M320.31 10.60C350.86 10.60 366.13 10.60 379.91 15.15L382.57 15.80C400.53 22.33 414.67 36.47 421.20 54.43L421.85 57.09C426.40 70.87 426.40 86.14 426.40 116.69L426.40 789.31C426.40 819.86 426.40 835.13 421.85 848.91L421.20 851.57C414.67 869.53 400.53 883.67 382.57 890.20L379.91 890.85C366.13 895.40 350.86 895.40 320.31 895.40L119.69 895.40C89.14 895.40 73.87 895.40 60.09 890.85L57.43 890.20C39.47 883.67 25.33 869.53 18.80 851.57L18.15 848.91C13.60 835.13 13.60 819.86 13.60 789.31L13.60 116.69C13.60 86.14 13.60 70.87 18.15 57.09L18.80 54.43C25.33 36.47 39.47 22.33 57.43 15.80L60.09 15.15C73.87 10.60 89.14 10.60 119.69 10.60Z" fill="#060606"/>
+          <path d="M320.68 11.30C350.92 11.30 366.04 11.30 379.68 15.80L382.32 16.45C400.09 22.91 414.09 36.91 420.55 54.68L421.20 57.32C425.70 70.96 425.70 86.08 425.70 116.32L425.70 789.68C425.70 819.92 425.70 835.04 421.20 848.68L420.55 851.32C414.09 869.09 400.09 883.09 382.32 889.55L379.68 890.20C366.04 894.70 350.92 894.70 320.68 894.70L119.32 894.70C89.08 894.70 73.96 894.70 60.32 890.20L57.68 889.55C39.91 883.09 25.91 869.09 19.45 851.32L18.80 848.68C14.30 835.04 14.30 819.92 14.30 789.68L14.30 116.32C14.30 86.08 14.30 70.96 18.80 57.32L19.45 54.68C25.91 36.91 39.91 22.91 57.68 16.45L60.32 15.80C73.96 11.30 89.08 11.30 119.32 11.30Z" fill="#000"/>
+          <g fill="#3d3a3d"><rect x="3.5" y="95" width="3" height="8"/><rect x="433.5" y="95" width="3" height="8"/><rect x="3.5" y="803" width="3" height="8"/><rect x="433.5" y="803" width="3" height="8"/></g>
+          <path d="M134.0 6.7H306.0V11.4H134.0Z" fill="#000"/>
+          <path d="M128.0 7.6H135.0C139.0 7.6 141.0 10.5 145.0 10.5H295.0C299.0 10.5 301.0 7.6 305.0 7.6H312.0" fill="none" stroke="#303030" stroke-width="1.4"/>
+          <path d="M326.22 16C353.51 16 367.16 16 379.46 20.06L381.85 20.64C397.89 26.48 410.52 39.11 416.36 55.15L416.94 57.54C421 69.84 421 83.49 421 110.78L421 795.22C421 822.51 421 836.16 416.94 848.46L416.36 850.85C410.52 866.89 397.89 879.52 381.85 885.36L379.46 885.94C367.16 890 353.51 890 326.22 890L113.78 890C86.49 890 72.84 890 60.54 885.94L58.15 885.36C42.11 879.52 29.48 866.89 23.64 850.85L23.06 848.46C19 836.16 19 822.51 19 795.22L19 110.78C19 83.49 19 69.84 23.06 57.54L23.64 55.15C29.48 39.11 42.11 26.48 58.15 20.64L60.54 20.06C72.84 16 86.49 16 113.78 16Z" fill="#000"/>
+          <g transform="translate(19 16)" fill="#fff"><rect class="island" fill="#000" x="153.58" y="13.92" width="94.83" height="36.83" rx="18.42"/><rect x="277.00" y="33.20" width="3.50" height="6.42" rx="1.64"/><rect x="282.67" y="31.05" width="3.50" height="8.57" rx="1.63"/><rect x="288.33" y="28.53" width="3.50" height="11.09" rx="1.64"/><rect x="294.00" y="26.05" width="3.50" height="13.57" rx="1.63"/><rect x="333.00" y="25.33" width="26.33" height="13.67" rx="4.29"/><path d="M360.00 29.95A1.98 2.11 0 0 1 360.00 34.17Z"/><path fill-rule="evenodd" d="M314.88 35.42L313.95 35.68L313.25 36.08L312.82 36.58L312.75 36.78L312.75 37.12L313.08 37.75L314.55 39.18L314.82 39.35L315.18 39.48L315.52 39.48L316.08 39.25L317.62 37.78L317.92 37.32L317.98 36.85L317.92 36.58L317.75 36.35L317.48 36.08L316.85 35.72L315.85 35.42ZM76.45 34.25L76.12 34.32L75.82 34.45L75.45 34.82L75.28 35.22L75.25 35.75L75.42 36.28L75.72 36.62L76.18 36.88L76.68 36.95L77.02 36.88L77.38 36.68L77.62 36.48L77.92 35.95L77.95 35.32L77.68 34.78L77.35 34.45L76.92 34.28ZM309.32 33.12L309.32 33.68L309.48 34.08L309.92 34.55L310.45 34.75L310.82 34.75L311.28 34.62L312.58 33.75L313.05 33.58L313.32 33.42L314.48 33.12L314.95 33.05L316.05 33.08L317.22 33.35L318.12 33.75L319.32 34.55L319.62 34.68L319.95 34.75L320.52 34.68L320.88 34.48L321.22 34.12L321.35 33.82L321.42 33.48L321.35 32.95L321.18 32.65L320.55 32.08L319.52 31.45L319.08 31.28L318.75 31.08L318.32 30.98L317.75 30.75L315.95 30.45L314.45 30.48L313.08 30.72L312.38 30.98L312.05 31.05L311.55 31.32L311.25 31.42L310.08 32.15L309.72 32.45L309.48 32.72ZM76.18 27.75L75.65 28.08L75.35 28.48L75.25 28.92L75.25 29.25L75.38 29.72L75.82 30.18L75.98 30.28L76.38 30.38L76.78 30.38L77.12 30.32L77.32 30.22L77.62 29.95L77.92 29.45L77.95 28.82L77.88 28.58L77.62 28.15L77.08 27.78L76.85 27.72ZM96.62 25.98L94.72 26.05L91.82 28.05L91.55 28.32L91.45 28.52L91.45 30.08L91.52 30.18L91.62 30.22L92.15 29.95L94.35 28.35L94.62 28.35L94.75 28.52L94.75 38.42L94.82 38.55L95.05 38.65L96.78 38.65L96.92 38.58L96.98 38.48L96.98 26.18L96.88 26.05ZM88.22 26.05L87.98 25.98L85.25 26.02L85.02 26.18L84.05 27.65L83.32 28.88L83.08 29.18L82.98 29.42L82.75 29.72L82.65 29.95L81.75 31.35L81.62 31.65L81.45 31.85L81.32 32.15L81.05 32.52L80.92 32.82L80.82 32.92L80.05 34.25L79.98 34.52L79.98 35.85L80.05 36.08L80.18 36.22L85.88 36.25L86.02 36.32L86.18 36.55L86.18 38.42L86.32 38.58L86.48 38.65L88.12 38.65L88.28 38.52L88.35 36.42L88.62 36.22L89.68 36.25L89.92 36.15L90.02 35.92L90.02 34.62L89.88 34.42L89.68 34.35L88.62 34.38L88.45 34.32L88.32 34.12L88.32 26.22ZM86.12 28.08L86.22 28.18L86.25 28.32L86.25 34.05L86.18 34.22L86.05 34.35L85.85 34.42L82.45 34.42L82.28 34.35L82.18 34.25L82.18 34.05L83.42 31.95L83.58 31.75L84.05 30.92L84.28 30.62L84.38 30.38L84.62 30.08L84.72 29.85L84.95 29.55L85.68 28.35L85.92 28.12ZM67.98 25.68L67.05 25.78L66.12 26.08L65.58 26.35L64.75 26.98L64.05 27.85L63.98 28.08L63.72 28.58L63.48 29.75L63.45 30.28L63.72 31.68L64.05 32.38L64.38 32.85L64.75 33.25L65.38 33.72L65.82 33.95L66.22 34.05L66.48 34.18L67.08 34.28L67.92 34.28L69.02 34.05L69.35 33.92L70.18 33.35L70.78 32.62L70.92 32.62L71.02 32.72L71.05 33.15L70.98 33.88L70.62 35.22L70.28 35.88L70.02 36.22L69.62 36.62L69.02 36.98L68.42 37.08L67.85 37.08L67.12 36.95L66.58 36.62L66.15 36.15L65.92 35.75L65.68 35.62L63.95 35.58L63.85 35.62L63.72 35.78L63.72 35.98L63.98 36.62L64.38 37.25L64.95 37.85L65.38 38.18L66.18 38.62L66.55 38.68L66.98 38.85L67.68 38.95L68.38 38.95L69.52 38.75L69.92 38.62L70.72 38.22L71.02 37.98L71.85 37.15L72.62 35.78L72.72 35.25L72.92 34.75L73.05 34.05L73.22 32.02L73.12 30.78L72.92 29.62L72.58 28.65L72.25 27.98L71.85 27.42L71.42 26.95L70.82 26.45L70.08 26.05L69.72 25.98L69.05 25.75ZM68.02 27.52L68.55 27.55L69.02 27.65L69.25 27.75L69.62 28.02L70.35 28.82L70.58 29.32L70.68 29.82L70.68 30.42L70.62 30.82L70.32 31.42L69.42 32.28L68.68 32.55L68.18 32.62L67.62 32.55L66.85 32.25L66.02 31.42L65.75 30.88L65.65 30.42L65.65 29.72L65.72 29.35L65.98 28.78L66.75 27.98L67.08 27.75L67.32 27.65ZM305.85 29.88L305.85 30.08L305.98 30.52L306.08 30.72L306.38 31.02L306.82 31.25L307.32 31.25L307.95 30.95L309.02 30.08L309.55 29.72L310.85 29.02L311.22 28.92L311.58 28.72L313.05 28.32L314.48 28.12L315.72 28.08L317.68 28.32L319.28 28.78L319.42 28.88L319.85 29.02L321.05 29.65L322.05 30.35L322.72 30.92L323.42 31.25L323.85 31.25L324.12 31.15L324.42 30.95L324.58 30.78L324.78 30.38L324.88 30.05L324.82 29.62L324.68 29.32L324.42 28.98L323.42 28.12L321.88 27.12L321.08 26.72L320.75 26.62L320.42 26.42L319.88 26.28L319.38 26.05L318.78 25.95L318.08 25.72L316.02 25.45L314.72 25.45L312.65 25.72L312.05 25.92L311.35 26.05L310.85 26.28L310.32 26.42L308.85 27.12L307.92 27.68L307.32 28.12L306.12 29.18L305.98 29.42Z"/></g>
+          <circle cx="248" cy="48.3" r="6" fill="#06070a"/><circle cx="248" cy="48.3" r="3.6" fill="url(#ph-lens)"/><circle cx="246.8" cy="47.1" r=".8" fill="#4a5c9c" fill-opacity=".55"/>
+          <g transform="translate(19 146.33)">
+            <rect x="12" y="656.67" width="290" height="46" rx="23" fill="none" stroke="#fff" stroke-opacity=".45"/>
+            <text x="31" y="685" font-size="15" fill="#fff">메시지 보내기...</text>
+            <g fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+              <path transform="translate(317.5 666) scale(1.15)" d="M12 20.5S2.800 15.200 2.800 8.800A4.900 4.900 0 0 1 12 6.400a4.900 4.900 0 0 1 9.200 2.400c0 6.400-9.200 11.700-9.200 11.700Z"/>
+              <path transform="translate(361.5 666) scale(1.15)" d="M21.500 3 2.500 3.800l6.300 6.700L11.500 20.500 21.500 3Zm0 0L8.800 10.500"/>
+            </g>
+          </g>
+          <rect x="148" y="877" width="144" height="5" rx="2.5" fill="#fff"/>
+        </symbol>
+        <symbol id="ig-pola" viewBox="0 0 100 100"><g clip-path="url(#ig-round)"><rect width="100" height="20.5" fill="#438ad3"/><rect y="20" width="100" height="20.5" fill="#89bc42"/><rect y="40" width="100" height="20.5" fill="#f5b93f"/><rect y="60" width="100" height="20.5" fill="#f08a33"/><rect y="80" width="100" height="20" fill="#dc4a34"/></g></symbol>
+        <symbol id="ig-badge" viewBox="0 0 40 40"><path fill="#0095f6" d="M19.998 3.094 14.638 0l-2.972 5.15H5.432v6.354L0 14.64 3.094 20 0 25.359l5.432 3.137v5.905h5.975L14.638 40l5.36-3.094L25.358 40l3.232-5.6h6.162v-6.01L40 25.359 36.905 20 40 14.641l-5.248-3.03v-6.46h-6.419L25.358 0l-5.36 3.094Z"/><path fill="#fff" d="m17.5 27.6-6.9-6.9 2.9-2.9 4 4 9.4-9.4 2.9 2.9Z"/></symbol>
+      </svg>
+    </div>
+    <div class="storybento">
+        <figure>
+          <div class="phone">
+            <svg class="phone__frame" viewBox="0 0 440 906" aria-hidden="true"><use href="#ph-frame"/></svg>
+            <div class="story story--reel" role="group" aria-label="폴라로이드 인스타그램 스토리 1 — 빛줄기에 감싸인 채 눈을 감은 사람의 영상">
+              <canvas class="st-bg" width="27" height="48" aria-hidden="true"></canvas>
+              <video src="assets/story-01-light-v4.mp4" data-poster="assets/story-01-light-v4.jpg" width="1080" height="1936" muted loop playsinline preload="none"></video>
+              <svg class="story__ui" viewBox="0 0 402 714.67">
+                <rect width="402" height="104" fill="url(#ig-shade)"/>
+                <rect x="8" y="8" width="191.5" height="2" rx="1" fill="#fff" fill-opacity=".35"/><rect x="8" y="8" width="191.5" height="2" rx="1" fill="#fff" class="ig-play"/><rect x="202.5" y="8" width="191.5" height="2" rx="1" fill="#fff" fill-opacity=".35"/>
+                <use href="#ig-pola" x="12" y="20" width="32" height="32"/>
+                <text x="54" y="33.5" font-size="14" font-weight="600">polaroid</text>
+                <use href="#ig-badge" x="112" y="22" width="13" height="13"/>
+                <text x="131" y="33.5" font-size="14" fill-opacity=".7">18시간</text>
+                <g class="st-reel" role="button" tabindex="0" aria-label="전체 릴스 보기">
+                  <rect x="50" y="38" width="116" height="20" fill="transparent"/>
+                  <path fill-rule="evenodd" d="M57.2 41.5h6.1a3.2 3.2 0 0 1 3.2 3.2v6.1a3.2 3.2 0 0 1-3.2 3.2h-6.1a3.2 3.2 0 0 1-3.2-3.2v-6.1a3.2 3.2 0 0 1 3.2-3.2Zm1.3 3.3v5.9l5-2.95Z"/>
+                  <text x="71" y="52.2" font-size="12.5">전체 릴스 보기</text>
+                </g>
+                <g><circle cx="334" cy="36" r="1.8"/><circle cx="341.5" cy="36" r="1.8"/><circle cx="349" cy="36" r="1.8"/></g>
+                <path class="ig-line" d="m370.5 26.5 19 19M389.5 26.5l-19 19"/>
+      <g class="st-card">
+                  <text x="60" y="111" font-size="14">polaroid</text>
+                  <text class="st-time" x="342" y="111" font-size="14" font-weight="600" text-anchor="end">0:06</text>
+                </g>
+                <g class="st-tip" role="button" tabindex="-1" aria-label="릴스 보기">
+                  <rect x="141" y="338" width="120" height="39" rx="11" fill="#262626" fill-opacity=".86"/>
+                  <text x="193" y="362.8" font-size="14.5" font-weight="600" text-anchor="middle">릴스 보기</text>
+                  <path class="ig-line" d="m233.5 351.5 6 6-6 6"/>
+                </g>
+              </svg>
+            </div>
+          </div>
+        </figure>
+        <figure>
+          <div class="phone">
+            <svg class="phone__frame" viewBox="0 0 440 906" aria-hidden="true"><use href="#ph-frame"/></svg>
+            <div class="story" data-end="1.8" role="img" aria-label="폴라로이드 인스타그램 스토리 2 — 흰 퍼 재킷을 입고 카메라를 든 채 웃는 사람의 영상 위에 Meet Your Next Polaroid. 문구가 뜨고, 끝에 폴라로이드 로고로 바뀜">
+              <video src="assets/story-02-smile.mp4" data-poster="assets/story-02-smile.jpg" width="544" height="720" style="object-position:40% 50%" muted loop playsinline preload="none"></video>
+              <svg class="story__ui" viewBox="0 0 402 714.67" aria-hidden="true">
+                <rect width="402" height="104" fill="url(#ig-shade)"/>
+                <rect x="8" y="8" width="191.5" height="2" rx="1" fill="#fff" fill-opacity=".35"/><rect x="8" y="8" width="191.5" height="2" rx="1" fill="#fff"/><rect x="202.5" y="8" width="191.5" height="2" rx="1" fill="#fff" fill-opacity=".35"/><rect x="202.5" y="8" width="191.5" height="2" rx="1" fill="#fff" class="ig-play"/>
+                <use href="#ig-pola" x="12" y="20" width="32" height="32"/>
+                <text x="54" y="41" font-size="14" font-weight="600">polaroid</text>
+                <use href="#ig-badge" x="112" y="29.5" width="13" height="13"/>
+                <text x="131" y="41" font-size="14" fill-opacity=".7">18시간</text>
+                <g><circle cx="334" cy="36" r="1.8"/><circle cx="341.5" cy="36" r="1.8"/><circle cx="349" cy="36" r="1.8"/></g>
+                <path class="ig-line" d="m370.5 26.5 19 19M389.5 26.5l-19 19"/>
+                <text class="st-title" x="201" y="357.33" text-anchor="middle" dominant-baseline="central">Meet Your Next Polaroid.</text>
+                <svg class="st-logo" x="139" y="340.74" width="124" height="33.18" viewBox="0 0 355 95"><path d="M84.06 73.965c-15.035 0-26.371-11.355-26.371-26.412 0-15.058 11.336-26.412 26.37-26.412s26.37 11.276 26.37 26.23c0 15.16-11.337 26.593-26.37 26.593Zm-.09-39.97c-6.962 0-12.626 6.082-12.626 13.558 0 7.475 5.703 13.557 12.715 13.557 7.13 0 12.715-5.955 12.715-13.557 0-7.476-5.744-13.557-12.804-13.557ZM129.163 0h-13.655v72.4h13.655V0ZM196.64 72.395V22.59h13.644v6.448c.765-1.378 3.427-7.997 14.802-7.997v12.38h-.266c-8.552 0-14.525 5.685-14.525 13.822v25.152H196.64ZM251.366 73.857c-15.034 0-26.371-11.355-26.371-26.412 0-15.057 11.337-26.412 26.371-26.412 15.033 0 26.369 11.277 26.369 26.23 0 15.16-11.336 26.594-26.369 26.594Zm-.091-39.97c-6.961 0-12.625 6.083-12.625 13.558S244.355 61 251.366 61c7.129 0 12.715-5.954 12.715-13.556 0-7.475-5.745-13.558-12.806-13.558ZM296.885 22.59h-14.054v49.805h14.054V22.591ZM289.866 0c-4.564 0-8.275 3.769-8.275 8.403 0 4.635 3.711 8.406 8.275 8.406 4.563 0 8.277-3.772 8.277-8.406S294.429 0 289.866 0ZM174.896 22.61v6.874c-.095-.2-3.953-8.468-16.172-8.468-13.722 0-24.471 11.469-24.471 26.109l.005.238-.005.134.005.133-.005.24c0 14.64 10.749 26.108 24.471 26.108 12.219 0 16.077-8.27 16.172-8.469v6.906h13.652V22.61h-13.652Zm-.189 25.252c0 7.363-6.403 13.354-13.812 13.354-7.278 0-12.983-5.941-12.988-13.555 0-.055.007-.109.007-.164 0-.056-.007-.108-.007-.164.005-7.614 5.71-13.556 12.988-13.556 7.409 0 13.812 5.992 13.812 13.356l-.004.178.004.186-.004.185.004.18ZM26.663 21.14C11.629 21.14 0 31.124 0 53.12V95h13.654V69.592c3.59 2.618 8.135 4.373 13.009 4.373 15.032 0 26.37-11.434 26.37-26.594 0-14.954-11.338-26.23-26.37-26.23Zm0 39.97c-7.012 0-12.422-6.082-12.422-13.557 0-7.476 5.37-13.26 12.332-13.26 7.06 0 12.804 5.785 12.804 13.26 0 7.602-5.584 13.557-12.715 13.557ZM328.337 73.86C343.371 73.86 355 63.876 355 41.88V0h-13.654v25.408c-3.59-2.619-8.135-4.373-13.009-4.373-15.032 0-26.369 11.434-26.369 26.594 0 14.954 11.337 26.23 26.369 26.23Zm0-39.97c7.012 0 12.422 6.082 12.422 13.557 0 7.476-5.37 13.26-12.332 13.26-7.061 0-12.804-5.785-12.804-13.26 0-7.602 5.584-13.557 12.714-13.557Z"/></svg>
+              </svg>
+            </div>
+          </div>
+        </figure>
+    </div>
+  </section>
+  <!-- app mockup photo, edge to edge after the stories -->
+  <figure data-chapter="design" class="fullshot">
+    <img src="assets/ig-stone-v2-2560.avif" srcset="assets/ig-stone-v2-2560.avif 2560w, assets/ig-stone-v2.avif 5088w" sizes="(orientation: portrait) 150vw, 100vw" width="5088" height="3808" alt="어두운 단 위에 놓인 두 대의 휴대폰에 폴라로이드 인스타그램 프로필과 TEMPERATURE 게시물이 보이는 목업" loading="lazy" decoding="async">
+  </figure>
 
-  <!-- POP-UP (bento) -->
+
+  <!-- POP-UP STORE and PHOTO BOOTH: text for now, the mockups go under the heading -->
+  <section data-chapter="design" class="section" id="popup">
+    <div class="wrap">
+      <div class="head reveal">
+        <div><p class="label">Pop-up &amp; booth</p>
+        <h2 class="h2">머물며 느끼고<br>한 장으로 남기다.</h2></div>
+        <p class="copy muted head__body">팝업스토어에서 빛과 소리, 온기를 직접 느끼고 <br class="br-m">포토부스에서 그 순간을 <br class="br-d">한 장으로 남겨 가며, <br class="br-m">미래의 폴라로이드를 가까이 만나는 공간입니다.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta">
     <h2 class="h1">Polaroid becomes<br><em class="swap" id="swap2">you</em>.</h2>
@@ -201,8 +306,8 @@
 </main>
 
 
-<script src="main.js?v=19"></script>
+<script src="main.js?v=29"></script>
 <script src="slogan-path.js?v=1"></script>
-<script src="slogan.js?v=6"></script>
+<script src="slogan.js?v=14"></script>
 </body>
 </html>
